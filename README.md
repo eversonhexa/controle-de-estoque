@@ -1,3 +1,4 @@
+
 # Sistema Web de Controle de Estoque e Distribuição de Materiais
 
 Aplicação web para controlar o recebimento, a armazenagem, as requisições dos setores, a distribuição e os saldos de um almoxarifado central.
@@ -126,3 +127,6 @@ Os testes cobrem os 10 cenários de aceitação da especificação (entrada, sa�
 
 - [`docs/API.md`](docs/API.md): rotas da API, formato das respostas e códigos de erro.
 - [`docs/decisoes.md`](docs/decisoes.md): inconsistências encontradas na especificação e decisões tomadas.
+=======
+# controle-de-estoque
+
