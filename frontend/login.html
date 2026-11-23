@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar · Controle de Estoque</title>
+  <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body>
+  <div class="login-fundo">
+    <div class="card login-card shadow-lg">
+      <div class="card-body p-4 p-md-5">
+        <div class="text-center mb-4">
+          <i class="bi bi-boxes text-primary" style="font-size:2.6rem"></i>
+          <h1 class="h4 mt-2 mb-0">Controle de Estoque</h1>
+          <p class="text-muted small mb-0">Almoxarifado central e distribuição de materiais</p>
+        </div>
+        <div id="msg" class="alert alert-danger d-none py-2 small" role="alert"></div>
+        <form id="fLogin" novalidate>
+          <div class="mb-3">
+            <label class="form-label" for="login">Login</label>
+            <input class="form-control" id="login" name="login" autocomplete="username" required autofocus maxlength="60">
+          </div>
+          <div class="mb-4">
+            <label class="form-label" for="senha">Senha</label>
+            <input class="form-control" id="senha" name="senha" type="password" autocomplete="current-password" required maxlength="72">
+          </div>
+          <button class="btn btn-primary w-100" id="btnEntrar" type="submit"><i class="bi bi-box-arrow-in-right me-1"></i>Entrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/core.js"></script>
+  <script src="/assets/js/pages/login.js"></script>
+</body>
+</html>

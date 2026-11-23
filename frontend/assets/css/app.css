@@ -1,0 +1,68 @@
+:root {
+  --sidebar-largura: 250px;
+  --cor-sidebar: #16263d;
+  --cor-sidebar-texto: #b9c6d8;
+  --cor-destaque: #2f6fdf;
+  --cor-fundo: #f3f5f9;
+}
+
+body { background: var(--cor-fundo); font-size: .925rem; }
+
+/* ---------- Estrutura ---------- */
+.app-shell { display: flex; min-height: 100vh; }
+.app-sidebar {
+  width: var(--sidebar-largura); background: var(--cor-sidebar); color: var(--cor-sidebar-texto);
+  position: fixed; inset: 0 auto 0 0; overflow-y: auto; z-index: 1040; transition: transform .2s ease;
+}
+.app-main { flex: 1; margin-left: var(--sidebar-largura); min-width: 0; display: flex; flex-direction: column; }
+.app-topbar {
+  height: 56px; background: #fff; border-bottom: 1px solid #e3e7ee; display: flex; align-items: center;
+  padding: 0 1rem; gap: .75rem; position: sticky; top: 0; z-index: 1030;
+}
+.app-conteudo { padding: 1.25rem; flex: 1; }
+.app-backdrop { display: none; }
+
+@media (max-width: 991.98px) {
+  .app-sidebar { transform: translateX(-100%); }
+  .app-sidebar.aberta { transform: translateX(0); }
+  .app-main { margin-left: 0; }
+  .app-backdrop.ativa { display: block; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 1035; }
+  .app-conteudo { padding: .85rem; }
+}
+
+/* ---------- Menu lateral ---------- */
+.sidebar-marca { display: flex; align-items: center; gap: .6rem; padding: 1rem 1.1rem; color: #fff; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,.08); }
+.sidebar-marca i { font-size: 1.4rem; color: #7fb0ff; }
+.sidebar-grupo { padding: .9rem 1.1rem .3rem; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: #7c8ba1; }
+.sidebar-link { display: flex; align-items: center; gap: .65rem; padding: .48rem 1.1rem; color: var(--cor-sidebar-texto); text-decoration: none; border-left: 3px solid transparent; }
+.sidebar-link:hover { background: rgba(255,255,255,.05); color: #fff; }
+.sidebar-link.ativo { background: rgba(47,111,223,.18); color: #fff; border-left-color: #7fb0ff; }
+.sidebar-link i { width: 1.1rem; text-align: center; }
+
+/* ---------- Componentes ---------- */
+.titulo-pagina { font-size: 1.3rem; font-weight: 600; margin: 0; }
+.card { border: 1px solid #e3e7ee; box-shadow: 0 1px 2px rgba(16,24,40,.04); }
+.card-indicador .valor { font-size: 1.75rem; font-weight: 700; line-height: 1; }
+.card-indicador .icone { width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center; font-size: 1.3rem; }
+.table thead th { font-size: .75rem; text-transform: uppercase; letter-spacing: .03em; color: #5b677a; white-space: nowrap; background: #f8f9fb; }
+.table td { vertical-align: middle; }
+.table-clicavel tbody tr { cursor: pointer; }
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.badge-status { font-weight: 600; letter-spacing: .02em; }
+.filtros .form-label { font-size: .75rem; margin-bottom: .15rem; color: #5b677a; }
+.itens-editor td { padding: .35rem; }
+.itens-editor input.form-control, .itens-editor select.form-select { min-width: 90px; }
+.vazio { padding: 2.5rem 1rem; text-align: center; color: #7c8ba1; }
+.vazio i { font-size: 2rem; display: block; margin-bottom: .5rem; }
+.dl-compacto dt { font-size: .72rem; text-transform: uppercase; color: #6b778a; font-weight: 600; }
+.dl-compacto dd { margin-bottom: .6rem; }
+.toast-container { z-index: 2000; }
+
+/* ---------- Login ---------- */
+.login-fundo { min-height: 100vh; display: grid; place-items: center; background: linear-gradient(135deg, #16263d 0%, #2f4f7f 100%); padding: 1rem; }
+.login-card { width: 100%; max-width: 400px; border: 0; border-radius: 14px; }
+
+@media print {
+  .app-sidebar, .app-topbar, .no-print { display: none !important; }
+  .app-main { margin: 0; }
+}

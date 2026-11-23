@@ -1,0 +1,37 @@
+{
+  "name": "controle-estoque-backend",
+  "version": "1.0.0",
+  "description": "Sistema Web de Controle de Estoque e Distribuição de Materiais - backend",
+  "main": "src/server.js",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:init": "node src/scripts/db-init.js",
+    "criar-admin": "node src/scripts/criar-admin.js",
+    "backup": "node src/scripts/backup.js",
+    "test": "node --test --test-concurrency=1 tests/"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.5",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.2",
+    "express-mysql-session": "^3.0.3",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.0.0",
+    "mysql2": "^3.12.0",
+    "pdfkit": "^0.15.2"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  }
+}
